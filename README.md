@@ -1,3 +1,24 @@
+## 📁 파일 구조
+
+#### 프론트엔드 구조
+
+```bash
+frontend/src/
+├── apis/                  # API 요청 함수 정의
+├── components/            # 재사용 가능한 컴포넌트
+├── hooks/                 # 커스텀 훅
+├── images/                # 이미지 리소스
+├── layout/                # 레이아웃
+├── mocks/                 # Mock 데이터
+├── pages/                 # 각 화면 페이지
+├── styles/                # 스타일 파일
+├── utils/                 # 유틸리티 함수
+├── App.css                # 전체 앱 스타일
+├── App.jsx                # 최상위 컴포넌트
+├── index.css              # 기본 스타일
+└── main.jsx               # 진입점
+```
+
 ## 📝 Gitmoji 커밋 컨벤션
 
 프로젝트에서는 커밋 메시지를 아래와 같은 **Gitmoji 스타일**로 작성합니다.  
