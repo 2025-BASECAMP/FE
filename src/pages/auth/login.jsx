@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import * as S from "../../styles/auth/login.style";
 
 const login = () => {
   return (
-    <div>
-      로그인 페이지
-    </div>
-  )
-}
+    <S.LoginWrapper>
+      <S.LoginBox>
+        <S.Title>로그인</S.Title>
+        <S.Input type="text" placeholder="이메일" />
+        <S.Input type="password" placeholder="비밀번호" />
+        <S.LoginButton>로그인</S.LoginButton>
+      </S.LoginBox>
+    </S.LoginWrapper>
+  );
+};
 
-export default login
+export default login;
