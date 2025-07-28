@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom';
 import * as S from "../styles/navbarStyle.style";
 import Sidebar from "./sidebar";
 
 const navbar = ({ showLogo, title }) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [isSidebarOpen, setSidebarOpen] = useState(false); // 사이드바 상태
+
+    useEffect(() => {
+        setSidebarOpen(false);
+    }, [location.pathname]);
 
     return (
         <>

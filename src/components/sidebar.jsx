@@ -16,7 +16,7 @@ const sidebar = ({ isOpen, onClose }) => {
           이름님
         </S.Name>
         <S.List>
-          <S.ListItem><S.MyIcon />마이페이지</S.ListItem>
+          <S.ListItem onClick={() => navigate('/mypage')}><S.MyIcon />마이페이지</S.ListItem>
         </S.List>
         <S.Logout onClick={() => navigate('/')}>
           로그아웃

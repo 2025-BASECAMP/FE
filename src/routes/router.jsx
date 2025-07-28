@@ -7,6 +7,9 @@ import SignupPage from "../pages/auth/signup";
 
 import HomePage from "../pages/home";
 
+// my
+import MyPage from "../pages/my/myPage";
+
 // location
 import LocationDetailPage from "../pages/location/LocationDetailPage";
 import FoodPage from "../pages/location/FoodPage";
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <HomePage />, // 홈 페이지
+      },
+      {
+        path: "/mypage",
+        element: <MyPage />, // 마이페이지
       },
       {
         path: "location/:id",

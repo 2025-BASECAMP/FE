@@ -16,6 +16,11 @@ const RootLayout = () => {
       return { showLogo: true, title: "" };
     }
 
+    // 경로 - mypage
+    if (currentPath === "/mypage") {
+      return { showLogo: false, title: "마이페이지" };
+    }
+
     // 경로 - location/:id
     const locationMatch = currentPath.match(/^\/location\/([^/]+)$/);
     if (locationMatch) {
