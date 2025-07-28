@@ -2,24 +2,6 @@ import styled from "styled-components";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/navbar";
 
-const LayoutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const MainContent = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-top: 60px;
-`;
-
-const Content = styled.div`
-  flex: 1;
-  padding: 20px;
-`;
-
 const RootLayout = () => {
   const location = useLocation();
   const currentPath = location.pathname;
@@ -62,14 +44,14 @@ const RootLayout = () => {
   })();
 
   return (
-    <LayoutContainer>
+    <div className="layoutContainer">
       {shouldShowNavbar && <Navbar {...navbarConfig} />}
-      <MainContent>
-        <Content>
+      <main className="mainContent">
+        <div className="content">
           <Outlet />
-        </Content>
-      </MainContent>
-    </LayoutContainer>
+        </div>
+      </main>
+    </div>
   );
 };
 

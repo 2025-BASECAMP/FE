@@ -111,6 +111,7 @@ const GlobalStyle = createGlobalStyle`
     flex: 1;
     width: 100%;
     overflow: hidden;
+    padding-top: 60px;
   }
 
   .content {
@@ -119,6 +120,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--color-white);
+    padding: 20px;
   }
 
 `;
