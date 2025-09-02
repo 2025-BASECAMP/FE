@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import * as S from "../../styles/location/PlacePage.style.js";
 import usePlaceList from "../../hooks/usePlaceList";
 
-import FoodHeader from "../../components/location/PlaceHeader.jsx";
+import PlaceHeader from "../../components/location/PlaceHeader.jsx";
 import ActivityCard from "../../components/location/PlaceCard";
 import ErrorBlock from "../../components/common/ErrorBlock";
 import EmptyState from "../../components/common/EmptyState";
@@ -39,9 +39,11 @@ const ActivityPage = () => {
 
   return (
     <S.Container>
-      <FoodHeader
+      <PlaceHeader
+        category="activity"
         stadiumName={selectedLocation?.name}
         teamName={selectedLocation?.team}
+        radius={3000}
       />
 
       {list.length === 0 && !loading ? (

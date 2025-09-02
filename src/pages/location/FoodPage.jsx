@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import * as S from "../../styles/location/PlacePage.style.js";
 import usePlaceList from "../../hooks/usePlaceList";
 
-import FoodHeader from "../../components/location/PlaceHeader.jsx";
+import PlaceHeader from "../../components/location/PlaceHeader.jsx";
 import FoodCard from "../../components/location/PlaceCard.jsx";
 import ErrorBlock from "../../components/common/ErrorBlock";
 import EmptyState from "../../components/common/EmptyState";
@@ -39,10 +39,12 @@ const FoodPage = () => {
 
   return (
     <S.Container>
-      <FoodHeader
-        stadiumName={selectedLocation?.name}
-        teamName={selectedLocation?.team}
-      />
+    <PlaceHeader
+      category="food"
+      stadiumName={selectedLocation?.name}
+      teamName={selectedLocation?.team}
+      radius={3000}
+    />
 
       {list.length === 0 && !loading ? (
         <EmptyState title="해당 구장 주변에서 맛집을 찾을 수 없습니다." description="다른 구장을 선택해보세요!" />
