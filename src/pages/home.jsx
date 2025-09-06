@@ -18,32 +18,44 @@ import { useNavigate } from "react-router-dom";
 
 const teamDataByRegion = {
   seoul: [
-    { id: 'heroes', name: '키움 히어로즈', logo: heroesLogo },
-    { id: 'twins', name: 'LG 트윈스', logo: twinsLogo },
+    { id: '1', name: '키움 히어로즈', logo: heroesLogo },
+    { id: '2', name: 'LG 트윈스', logo: twinsLogo },
     { id: 'bears', name: '두산 베어스', logo: bearsLogo },
   ],
   gwangju: [
-    { id: 'tigers', name: '기아 타이거즈', logo: tigersLogo },
+    { id: '5', name: 'KIA 타이거즈', logo: tigersLogo },
   ],
   daegu: [
-    { id: 'lions', name: '삼성 라이온즈', logo: lionsLogo },
+    { id: '4', name: '삼성 라이온즈', logo: lionsLogo },
   ],
   suwon: [
-    { id: 'wiz', name: '케이티 위즈', logo: wizLogo },
+    { id: '7', name: 'KT 위즈', logo: wizLogo },
   ],
   incheon: [
-    { id: 'landers', name: 'SSG 랜더스', logo: landersLogo },
+    { id: '9', name: 'SSG 랜더스', logo: landersLogo },
   ],
   daejeon: [
-    { id: 'eagles', name: '한화 이글스', logo: eaglesLogo },
+    { id: '6', name: '한화 이글스', logo: eaglesLogo },
   ],
   busan: [
-    { id: 'giants', name: '롯데 자이언츠', logo: giantsLogo },
+    { id: '3', name: '롯데 자이언츠', logo: giantsLogo },
   ],
   changwon: [
-    { id: 'dinos', name: 'NC 다이노스', logo: dinosLogo },
+    { id: '8', name: 'NC 다이노스', logo: dinosLogo },
   ],
 };
+
+const regionNameMap = {
+  seoul: '서울',
+  busan: '부산',
+  suwon: '수원',
+  gwangju: '광주',
+  daegu: '대구',
+  incheon: '인천',
+  daejeon: '대전',
+  changwon: '창원',
+};
+
 const home = () => {
   const navigate = useNavigate();
   const [selectedRegion, setSelectedRegion] = useState(null);
@@ -124,16 +136,18 @@ const home = () => {
       {/* 구단 목록 표시 영역 */}
       {selectedRegion && teamDataByRegion[selectedRegion] && (
         <div style={{ padding: '20px', backgroundColor: '#fafafa', borderTop: '1px solid #ccc' }}>
-          <h3>{selectedRegion.toUpperCase()}</h3>
-          {teamDataByRegion[selectedRegion].map((team) => (
-            <div key={team.id} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-              <img src={team.logo} alt={team.name} width="30px" />
-              <strong>{team.name}</strong>
-              <button onClick={() => navigate(`location/:id/food`)}>맛집</button>
-              <button onClick={() => navigate(`location/:id/activity`)}>놀거리</button>
-              <button onClick={() => navigate(`location/:id/hotel`)}>숙소</button>
-            </div>
-          ))}
+          <h3 style={{ marginBottom: '15px' }}>{regionNameMap[selectedRegion]}</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr repeat(3, 60px)', alignItems: 'center', rowGap: '10px' }}>
+            {teamDataByRegion[selectedRegion].map((team) => (
+              <React.Fragment key={team.id}>
+                <img src={team.logo} alt={team.name} width="30px" />
+                <strong>{team.name}</strong>
+                <button onClick={() => navigate(`/location/${team.id}/food`)}>맛집</button>
+                <button onClick={() => navigate(`/location/${team.id}/activity`)}>놀거리</button>
+                <button onClick={() => navigate(`/location/${team.id}/hotel`)}>숙소</button>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       )}
     </div>
