@@ -120,7 +120,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--color-white);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
 `;
